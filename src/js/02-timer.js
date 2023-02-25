@@ -61,7 +61,7 @@ function onButtonClck() {
     options.isActive = true;
     const currentTime = Date.now();
     const timeSubtraction = date.getTime() - currentTime;
-    const refreshTime = addLeadingZero(convertMs(timeSubtraction));
+    const refreshTime = convertMs(timeSubtraction);
     const timeArr = Object.values(refreshTime);
     timeUpdate(timeArr);
     if (timeSubtraction <= 999) {
