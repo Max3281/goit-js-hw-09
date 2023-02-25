@@ -20,9 +20,9 @@ function createPromise(position, delay) {
 }
 
 function onClick(evt) {
-  let fakeAmount = formSubmitEl.elements.amount.value;
-  let fakeStep = Number(formSubmitEl.elements.step.value);
-  let delay = Number(formSubmitEl.elements.delay.value);
+  let fakeAmount = evt.target.amount.value;
+  let fakeStep = Number(evt.target.step.value);
+  let delay = Number(evt.target.delay.value);
   evt.preventDefault();
   console.log(fakeStep, fakeAmount);
   for (let position = 1; position <= fakeAmount; position += 1) {
