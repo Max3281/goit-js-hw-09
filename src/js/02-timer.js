@@ -7,9 +7,9 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDates) {
+  onClose([selectedDates]) {
     const startTime = Date.now();
-    const [selectedTime] = selectedDates.getTime();
+    const selectedTime = selectedDates.getTime();
     if (selectedTime <= startTime) {
       Notiflix.Notify.failure('Please choose a date in the future');
       buttonStartCountEl.disabled = true;
