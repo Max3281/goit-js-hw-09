@@ -7,9 +7,9 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose([selectedDates]) {
+  onClose(selectedDates) {
     const startTime = Date.now();
-    const selectedTime = selectedDates.getTime();
+    const selectedTime = selectedDates[0].getTime();
     if (selectedTime <= startTime) {
       Notiflix.Notify.failure('Please choose a date in the future');
       buttonStartCountEl.disabled = true;
@@ -56,7 +56,6 @@ function onButtonClck() {
     const timeSubtraction = date.getTime() - currentTime;
     const refreshTime = addLeadingZero(convertMs(timeSubtraction));
     const timeArr = Object.values(refreshTime);
-    // timerUpdate(timeArr);
     const spanArr = Array.from(spanSelectionEl);
     for (let index = 0; index < spanArr.length; index++) {
       spanArr[index].textContent = timeArr[index];
@@ -66,10 +65,3 @@ function onButtonClck() {
     }
   }, 1000);
 }
-
-// function timerUpdate(timeArr) {
-//   const spanArr = Array.from(spanSelectionEl);
-//   for (let index = 0; index < spanArr.length; index++) {
-//     spanArr[index].textContent = timeArr[index];
-//   }
-// }
