@@ -56,21 +56,20 @@ function onButtonClck() {
     const timeSubtraction = date.getTime() - currentTime;
     const refreshTime = addLeadingZero(convertMs(timeSubtraction));
     const timeArr = Object.values(refreshTime);
-
-    timerUpdate(timeArr);
-    // const spanArr = Array.from(spanSelectionEl);
-    // for (let index = 0; index < spanArr.length; index++) {
-    //   spanArr[index].textContent = timeArr[index];
-    // }
+    // timerUpdate(timeArr);
+    const spanArr = Array.from(spanSelectionEl);
+    for (let index = 0; index < spanArr.length; index++) {
+      spanArr[index].textContent = timeArr[index];
+    }
     if (timeSubtraction <= 999) {
       clearInterval(timeInterval);
     }
   }, 1000);
 }
 
-function timerUpdate(timeArr) {
-  const spanArr = Array.from(spanSelectionEl);
-  for (let index = 0; index < spanArr.length; index++) {
-    spanArr[index].textContent = timeArr[index];
-  }
-}
+// function timerUpdate(timeArr) {
+//   const spanArr = Array.from(spanSelectionEl);
+//   for (let index = 0; index < spanArr.length; index++) {
+//     spanArr[index].textContent = timeArr[index];
+//   }
+// }
