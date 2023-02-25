@@ -1,9 +1,7 @@
 import Notiflix from 'notiflix';
 
-// const buttonEl = document.querySelector('button');
 const formSubmitEl = document.querySelector('.form');
 
-// buttonEl.addEventListener('click', onClick);
 formSubmitEl.addEventListener('submit', onClick);
 
 function createPromise(position, delay) {
